@@ -4,8 +4,8 @@ Ce dépôt GitHub est dédié au développement d'un jeu de Nim, réalisé dans 
 
 ## Auteurs
 
-- [Nom de l'auteur 1](lien-vers-le-compte-GitHub-1)
-- [Nom de l'auteur 2](lien-vers-le-compte-GitHub-2)
+- Jules Gaudet
+- Hugues Corbeil
 
 ## Description du Projet
 
@@ -38,4 +38,4 @@ L'organisation du projet est la suivante :
 
 ## Licence
 
-Ce projet est sous licence [Insérer ici la licence de votre choix, par exemple, MIT License]. Consultez le fichier `LICENSE` pour plus de détails.
+Ce projet est sous licence MIT license. Consultez le fichier `LICENSE` pour plus de détails.
