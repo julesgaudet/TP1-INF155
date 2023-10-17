@@ -4,8 +4,8 @@ Ce dépôt GitHub est dédié au développement d'un jeu de Nim, réalisé dans 
 
 ## Auteurs
 
-- Jules Gaudet
-- Hugues Corbeil test
+- Jules Gaudet 
+- Hugues Corbeil
 
 ## Description du Projet
 
