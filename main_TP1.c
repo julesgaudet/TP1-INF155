@@ -46,7 +46,7 @@ int main (void) {
     printf("*****************Cinquième test*********************\n");
     test_plateau_defragmenter(); //TEST 5
     printf("\n");
-    printf("*****************Cinquième test*********************\n");
+    printf("*****************Sixième test*********************\n");
     test_nim_choix_ia_aleatoire(); //TEST 6
 
     //Fonctions pour que le programme fonctionne
