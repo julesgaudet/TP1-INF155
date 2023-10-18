@@ -6,12 +6,19 @@
 #define MANIP_PLATEAU_H_
 #define NIM_H_
 
+/*******************************************************************************/
+/*                   D�CLARATION DES LIBRAIRIES                                */
+/*******************************************************************************/
+
 #include "codage_numerique.h"
 #include "m_distributions.h"
 #include "m_distributions.h"
 #include<stdio.h>
 #include<stdlib.h>
 
+/*******************************************************************************/
+/*                    D�CLARATION DES CONSTANTES                               */
+/*******************************************************************************/
 
 #define PLATEAU_MAX_COLONNES 20		//Nombre maximal de colonnes sur le plateau
 #define PLATEAU_MAX_PIECES 35		//Nombre maximal de pi�ces par colonne

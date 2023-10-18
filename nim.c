@@ -64,9 +64,9 @@ int plateau_defragmenter(int plateau[], int nb_colonnes) {
 }
 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces) {
-    md_srand(nb_colonnes);
+    unsigned int seed = md_srand_interne();
     *choix_colonne = rand() % nb_colonnes;
-    md_srand(PLATEAU_MAX_PIECES);
+    unsigned int seed = md_srand_interne();
     *choix_nb_pieces = rand() % PLATEAU_MAX_PIECES;
     /*plateau[*choix_colonne] = *choix_nb_pieces; Je ne sais pas comment faire ici*/
 }
