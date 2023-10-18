@@ -19,16 +19,11 @@
 /*******************************************************************************/
 
 void plateau_init(int plateau[], int nb_colonnes) {
-
-    md_srand(PLATEAU_MAX_PIECES);
+    unsigned int seed = md_srand_interne();
     for (int i = 0; i < nb_colonnes; i++) {
-        plateau[i] = rand() % PLATEAU_MAX_PIECES;
-        while (plateau[i] == 0) {
-            plateau[i] = rand() % PLATEAU_MAX_PIECES;
-        }
+        plateau[i] = rand() % PLATEAU_MAX_PIECES + 1;
     }
 }
-
 /*******************************************************************************/
 /*                                nim_jouer_tour                               */
 /*******************************************************************************/
@@ -73,6 +68,6 @@ void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_co
     *choix_colonne = rand() % nb_colonnes;
     md_srand(PLATEAU_MAX_PIECES);
     *choix_nb_pieces = rand() % PLATEAU_MAX_PIECES;
-    plateau[*choix_colonne] = *choix_nb_pieces; //Je ne sais pas comment faire ici
+    /*plateau[*choix_colonne] = *choix_nb_pieces; Je ne sais pas comment faire ici*/
 }
 
