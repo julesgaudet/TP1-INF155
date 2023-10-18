@@ -20,4 +20,5 @@ void test_plateau_init(); //TEST 2 : S'assurer que les valeurs dans le tableau s
 void test_nim_jouer_tour(); //TEST 3 : S'assurer qu'on peut soustraire le nombre de pièces dans la colonne que l'utilisateur a indiqué
 void test_plateau_supprimer_colonne(); //TEST 4 : S'assurer qu'on supprime la colonne "col_a_supprimer" du plateau; on devra donc copier les valeurs de toutes les colonnes suivantes du plateau d’une position vers la gauche
 void test_plateau_defragmenter(); //TEST 5 : Fonction qui supprime les colonnes vides du tableau en utilisant la fonction "plateau_supprimer_colonne". Le nombre de colonnes restant est retourné. 
+void test_nim_choix_ia_aleatoire(); //TEST 6 : Fonction qui effectue un jeu aléatoire en choisissant au hasard une colonne, puis au hasard le nombre de pièces à jouer de cette colonne. 
 #endif

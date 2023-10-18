@@ -60,3 +60,7 @@ void test_plateau_defragmenter() {
     int x = plateau_defragmenter(plateau, 5);
     printf("Le nombre de zéro enlevé : %d\n", x);
 }
+
+void test_nim_choix_ia_aleatoire() {
+    
+}
