@@ -62,5 +62,10 @@ void test_plateau_defragmenter() {
 }
 
 void test_nim_choix_ia_aleatoire() {
-    
+    const int plateau[5] = {1,5,5,5,5};
+    int nb_colonnes = 5;
+    int choix_colonne, choix_nb_pieces;
+    nim_choix_ia_aleatoire(plateau, nb_colonnes, &choix_colonne, &choix_nb_pieces);
+    printf("Voici le choix de colonne : %d\n", choix_colonne);
+    printf("Voici le nouveau nombre de pièces : %d\n", choix_nb_pieces);
 }

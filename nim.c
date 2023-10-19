@@ -29,10 +29,11 @@ void plateau_init(int plateau[], int nb_colonnes) {
 /*******************************************************************************/
 
 int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces) {
-    if (nb_pieces <= plateau[colonne] && colonne <= nb_colonnes) {
+    if (colonne >= 0 && colonne < nb_colonnes && nb_pieces <= plateau[colonne]) {
         plateau[colonne] = plateau[colonne] - nb_pieces;
         return TRUE;
     }
+    return FALSE;
 }
 
 /*******************************************************************************/
@@ -66,7 +67,5 @@ int plateau_defragmenter(int plateau[], int nb_colonnes) {
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces) {
     unsigned int seed = md_srand_interne();
     *choix_colonne = rand() % nb_colonnes;
-    unsigned int seed = md_srand_interne();
-    *choix_nb_pieces = rand() % PLATEAU_MAX_PIECES;
-    /*plateau[*choix_colonne] = *choix_nb_pieces; Je ne sais pas comment faire ici*/
+    *choix_nb_pieces = plateau[*choix_colonne] - (rand() % plateau[*choix_colonne]);
 }
