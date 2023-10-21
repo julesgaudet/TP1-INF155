@@ -85,3 +85,41 @@ void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_co
 void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int * choix_colonne, int * choix_nb_pieces) {
     //À faire
 }
+
+/*******************************************************************************/
+/*                         construire_mat_binaire                              */
+/*******************************************************************************/
+
+void construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]) {
+    for (int i = 0; i < nb_colonnes; i++) {
+        codage_dec2bin(plateau[i], matrice[i]);
+    }
+}
+
+/*******************************************************************************/
+/*                              sommes_mat_binaire                             */
+/*******************************************************************************/
+
+void sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, int sommes[]) {
+    for (int i = 0; i < nb_lignes; i++) {
+        for (int j = 0; j < CODAGE_NB_BITS; j++) {
+            sommes[j] = sommes[j] + matrice[i][j];
+        }
+    }
+}
+
+/*******************************************************************************/
+/*                        position_premier_impaire                             */
+/*******************************************************************************/
+
+int position_premier_impaire(const int tab[]) {
+    for (int i = 0; i < CODAGE_NB_BITS; i++) {
+        if ((tab[i] % 2) == 1) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+

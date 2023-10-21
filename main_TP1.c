@@ -27,35 +27,47 @@ int lire_entier(int min, int max);
 int main (void) {
     printf("\n");
     printf("******************Premier test********************\n");
-    test_lire_entier(); //TEST 1
+    test_lire_entier(); 
     printf("\n");
     printf("*****************Deuxième test*********************\n");
-    test_plateau_init(); //TEST 2
+    test_plateau_init(); 
     printf("\n");
     printf("*****************Troisième test********************\n");
-    test_nim_jouer_tour(); //TEST 3
+    test_nim_jouer_tour(); 
     printf("\n");
     printf("*****************Quatrième test********************\n");
-    test_plateau_supprimer_colonne(); //TEST 4
+    test_plateau_supprimer_colonne(); 
     printf("\n");
     printf("*****************Cinquième test*********************\n");
-    test_plateau_defragmenter(); //TEST 5
+    test_plateau_defragmenter(); 
     printf("\n");
     printf("*****************Sixième test*********************\n");
-    test_nim_choix_ia_aleatoire(); //TEST 6
+    test_nim_choix_ia_aleatoire(); 
 
 //TEST PARTIE 2
     printf("\n");
     printf("*****************Treizième test*********************\n");
-    test_inverser_tab_bits();  //TEST 13
+    test_inverser_tab_bits();  
     printf("\n");
     printf("*****************Quatorzième test*********************\n");
-    test_codage_dec2bin();  //TEST 14
+    test_codage_dec2bin();  
     printf("\n");
     printf("*******************Quinzième test*********************\n");
-    test_afficher_tab_bits();  //TEST 15
+    test_afficher_tab_bits();  
     printf("\n");
-    
+    printf("*******************Seizième test*********************\n");
+    test_codage_bin2dec();
+    printf("\n");
+    printf("*******************Dixseptième test*********************\n");
+    test_construire_mat_binaire();
+    printf("\n");
+    printf("\n");
+    printf("*******************Dixhuitième test*********************\n");
+    test_sommes_mat_binaire();
+    printf("\n");
+    printf("*******************Dix-neuvième test*********************\n");
+    test_position_premier_impaire();
+    printf("\n");
 
     //Fonctions pour que le programme fonctionne
     //lire_entier(MINIMUM_BORNE, MAXIMUM_BORNE);

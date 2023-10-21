@@ -37,32 +37,49 @@ int inverser_tab_bits(int tab_bits[], int nb_bits) {
 int codage_dec2bin(int nombre, int resultat[]) {
     int compteur = 0;
     int i = 0;
-     while (nombre != 0 && i < CODAGE_NB_BITS) {  
+    while (nombre != 0 && i < CODAGE_NB_BITS) {
         resultat[i] = nombre % 2;
         compteur++;
         i++;
         nombre /= 2;
     }
-    if (nombre == 0 && compteur <= CODAGE_NB_BITS) {
-        int tableauTemporaire[compteur];
-        for (int y = 0; y < compteur; y++) {
-            tableauTemporaire[y] = resultat[compteur - 1 - y];
-        }
-        for (int z = 0; z < compteur; z++) {
-            resultat[z] = tableauTemporaire[z];
-        }
-        return compteur;
-    } 
+    while (i < CODAGE_NB_BITS) {
+        resultat[i] = 0;
+        i++;
+    }
+    if (compteur <= CODAGE_NB_BITS) {
+        inverser_tab_bits(resultat, CODAGE_NB_BITS);
+        return CODAGE_NB_BITS; 
+    }
     return 0;
 }
+
 
 /*******************************************************************************/
 /*                           afficher_tabs_bits                                */
 /*******************************************************************************/
 
 void afficher_tab_bits(const int tab_bits[], int nb_bits) {
-    printf("Tableau : ");
     for (int i = 0; i < nb_bits; i++) {
         printf("%d ", tab_bits[i]);
     }
+}
+
+/*******************************************************************************/
+/*                               codage_bin2dec                                */
+/*******************************************************************************/
+
+int codage_bin2dec(const int tab_bits[]) {
+    int valeur = 0;
+    int exposant = 1;
+    for (int i = 0; i < CODAGE_NB_BITS; i++) {
+        if (tab_bits[i] == 1) {
+            for (int j = 0; j < CODAGE_NB_BITS - i - 1; j++) {
+                exposant = exposant * 2;
+            }
+            valeur = valeur + exposant;
+            exposant = 1; 
+        }
+    }
+    return valeur;
 }

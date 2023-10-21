@@ -74,7 +74,7 @@ void test_plateau_supprimer_colonne() {
 /*******************************************************************************/
 
 void test_plateau_defragmenter() {
-    int plateau[5] = {1,0,0,0,5};
+    int plateau[5] = {1, 0, 0, 0, 5};
     int x = plateau_defragmenter(plateau, 5);
     printf("Le nombre de zéro enlevé : %d\n", x);
 }
@@ -84,7 +84,7 @@ void test_plateau_defragmenter() {
 /*******************************************************************************/
 
 void test_nim_choix_ia_aleatoire() {
-    const int plateau[5] = {1,5,5,5,5};
+    const int plateau[5] = {1, 5, 5, 5, 5};
     int nb_colonnes = 5;
     int choix_colonne, choix_nb_pieces;
     nim_choix_ia_aleatoire(plateau, nb_colonnes, &choix_colonne, &choix_nb_pieces);
@@ -114,7 +114,7 @@ void test_inverser_tab_bits() {
 /*******************************************************************************/
 
 void test_codage_dec2bin() {
-    int nombre = 255;
+    int nombre = 3;
     int resultat[8];  
     int nb_bits = codage_dec2bin(nombre, resultat);
     printf("Nombre décimal : %d\n", nombre);
@@ -131,6 +131,78 @@ void test_codage_dec2bin() {
 /*******************************************************************************/
 
 void test_afficher_tab_bits() {
-    int resultat[8] = {1,1,1,1,1,0,0,0};
+    printf("Afficher un tableau : ");
+    int resultat[8] = {1, 1, 1, 1, 1, 0, 0, 0};
     afficher_tab_bits(resultat, CODAGE_NB_BITS);
+    printf("\n");
+}
+
+/*******************************************************************************/
+/*                             test_codage_bin2dec                             */
+/*******************************************************************************/
+
+void test_codage_bin2dec() {
+    int resultat[8] = {1, 1, 1, 1, 1, 1, 1, 1} ;
+    int valeur = codage_bin2dec(resultat);
+    printf("Voici la valeur du tableau test : %d\n", valeur);
+}
+
+/*******************************************************************************/
+/*                         test_construire_mat_binaire                         */
+/*******************************************************************************/
+
+void test_construire_mat_binaire() {
+    int plateau[8] = {1, 5, 3, 34, 3, 23, 33, 255};
+    int matrice[8][CODAGE_NB_BITS];
+    printf("Avant conversion en binaire :\n");
+    printf("Plateau : ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", plateau[i]);
+    }
+    printf("\n");
+    construire_mat_binaire(plateau, 8, matrice);
+    printf("\nAprès conversion en binaire :\n");
+    printf("Matrice (après) :\n");
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < CODAGE_NB_BITS; j++) {
+            printf("%d ", matrice[i][j]);
+        }
+    }
+}
+
+/*******************************************************************************/
+/*                            test_sommes_mat_binaire                          */
+/*******************************************************************************/
+
+void test_sommes_mat_binaire() {
+    int matrice[3][CODAGE_NB_BITS] = {
+        {1, 0, 0, 0, 0, 0, 0, 0},
+        {0, 1, 0, 1, 0, 0, 1, 0},
+        {1, 0, 0, 1, 1, 0, 0, 1}
+    };
+
+    int sommes[CODAGE_NB_BITS] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    sommes_mat_binaire(matrice, 3, sommes);
+
+    printf("Sommes des lignes de la matrice binaire :\n");
+    for (int i = 0; i < CODAGE_NB_BITS; i++) {
+        printf("%d ", sommes[i]);
+    }
+    printf("\n");
+}
+
+/*******************************************************************************/
+/*                        test_position_premier_impaire                        */
+/*******************************************************************************/
+
+void test_position_premier_impaire() {
+    int tableau1[CODAGE_NB_BITS] = {2, 4, 6, 8, 1, 10, 12, 14};
+    int resultat1 = position_premier_impaire(tableau1);
+    printf("Tableau 1 : ");
+    for (int i = 0; i < CODAGE_NB_BITS; i++) {
+        printf("%d ", tableau1[i]);
+    }
+    printf("\n");
+    printf("Position du premier impair dans le tableau 1 : %d\n", resultat1);
 }

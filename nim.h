@@ -35,5 +35,8 @@ void plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprim
 int plateau_defragmenter(int plateau[], int nb_colonnes); //Fonction qui supprime les colonnes vides du tableau en utilisant la fonction "plateau_supprimer_colonne". 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces); //Fonction qui effectue un jeu aléatoire en choisissant au hasard une colonne, puis au hasard le nombre de pièces à jouer de cette colonne. 
 void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int * choix_colonne, int * choix_nb_pieces); //Fonction qui détermine quel doit être le jeu de l'ordinateur. 
+void construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]); //Construit la matrice binaire nécessaire à l'algorithme de choix de jeu de l'ordinateur.
+void sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, int sommes[]); //Calcule les sommes des colonnes d'une matrice binaire de taille "nb_lignes" * CODAGE_NB_BITS. 
+int position_premier_impaire(const int tab[]); //Recherche la première valeur impaire d'un tableau tab et retourne son indice.
 
 #endif

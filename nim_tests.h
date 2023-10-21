@@ -26,6 +26,10 @@ void test_nim_choix_ia_aleatoire(); //TEST 6 : S'assurer qu'il effectue un jeu a
 //Partie 2
 void test_inverser_tab_bits(); //TEST 13 : S'assurer qu'il fait un inversement avec le nombre de bits.
 void test_codage_dec2bin(); //TEST 14 : S'assurer qu'un nombre décimal est traduit en binaire.
-void test_afficher_tab_bits();//TEST 15 : Afficher le tableau
+void test_afficher_tab_bits();//TEST 15 : Afficher le tableau.
+void test_codage_bin2dec(); //TEST 16 : S'assurer qu'un nombre binaire est traduit en décimale.
+void test_construire_mat_binaire(); //TEST 17 : S'assurer qu'il la matrice binaire nécessaire à l'algorithme de choix de jeu de l'ordinateur. 
+void test_sommes_mat_binaire(); //TEST 18 : S'assurer que ça calcule les sommes des colonnes d'une matrice binaire de taille "nb_lignes" * CODAGE_NB_BITS. 
+void test_position_premier_impaire(); //TEST 19 : S'assurer que ça retourne le premier nombre impaire dans le tableau.
 
 #endif
