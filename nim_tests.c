@@ -93,6 +93,40 @@ void test_nim_choix_ia_aleatoire() {
 }
 
 /*******************************************************************************/
+/*                              test_nim_choix_ia                              */
+/*******************************************************************************/
+
+//CE CODE NE FONCTIONNE PAS
+
+void test_nim_choix_ia() {
+    int plateau[8] = {2, 6, 7, 14, 22, 4, 9, 13};
+    int choix_colonne;
+    int choix_nb_pieces;
+    printf("Plateau initial : ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", plateau[i]);
+    }
+    printf("\n");
+    printf("Niveau 0 :\n");
+    nim_choix_ia(plateau, 8, 0, &choix_colonne, &choix_nb_pieces);
+    printf("Choix de colonne : %d\n", choix_colonne);
+    printf("Nombre de pièces à retirer : %d\n", choix_nb_pieces);
+    printf("Niveau 1 :\n");
+    nim_choix_ia(plateau, 8, 1, &choix_colonne, &choix_nb_pieces);
+    printf("Choix de colonne : %d\n", choix_colonne);
+    printf("Nombre de pièces à retirer : %d\n", choix_nb_pieces);
+    printf("Niveau 2 :\n");
+    nim_choix_ia(plateau, 8, 2, &choix_colonne, &choix_nb_pieces);
+    printf("Choix de colonne : %d\n", choix_colonne);
+    printf("Nombre de pièces à retirer : %d\n", choix_nb_pieces);
+    printf("Plateau après les choix : ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", plateau[i]);
+    }
+    printf("\n");
+}
+
+/*******************************************************************************/
 /*                               PARTIE 2                                      */
 /*                        test_inverser_tab_bits                               */
 /*******************************************************************************/
@@ -152,7 +186,7 @@ void test_codage_bin2dec() {
 /*******************************************************************************/
 
 void test_construire_mat_binaire() {
-    int plateau[8] = {1, 5, 3, 34, 3, 23, 33, 255};
+    int plateau[8] = {1, 5, 3, 34, 3, 23, 33, 12};
     int matrice[8][CODAGE_NB_BITS];
     printf("Avant conversion en binaire :\n");
     printf("Plateau : ");
@@ -162,11 +196,12 @@ void test_construire_mat_binaire() {
     printf("\n");
     construire_mat_binaire(plateau, 8, matrice);
     printf("\nAprès conversion en binaire :\n");
-    printf("Matrice (après) :\n");
     for (int i = 0; i < 8; i++) {
+        printf("colonne %d : ", i + 1);
         for (int j = 0; j < CODAGE_NB_BITS; j++) {
             printf("%d ", matrice[i][j]);
         }
+        printf("\n");
     }
 }
 

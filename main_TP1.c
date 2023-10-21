@@ -43,6 +43,9 @@ int main (void) {
     printf("\n");
     printf("*****************Sixième test*********************\n");
     test_nim_choix_ia_aleatoire(); 
+    printf("\n");
+    printf("*****************Septième test*********************\n");
+    test_nim_choix_ia();
 
 //TEST PARTIE 2
     printf("\n");
@@ -68,12 +71,5 @@ int main (void) {
     printf("*******************Dix-neuvième test*********************\n");
     test_position_premier_impaire();
     printf("\n");
-
-    //Fonctions pour que le programme fonctionne
-    //lire_entier(MINIMUM_BORNE, MAXIMUM_BORNE);
-    //void plateau_init(int plateau[], int nb_colonnes);
-    //int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces);
-    //void plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprimer);
-    //int plateau_defragmenter(int plateau[], int nb_colonnes);
     return 0;
 }
