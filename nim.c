@@ -49,6 +49,10 @@ void plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprim
     }
 }
 
+/*******************************************************************************/
+/*                             plateau_defragmenter                            */
+/*******************************************************************************/
+
 int plateau_defragmenter(int plateau[], int nb_colonnes) {
     int compteur = 0;
     int i = 0;  
@@ -64,8 +68,20 @@ int plateau_defragmenter(int plateau[], int nb_colonnes) {
     return compteur;  
 }
 
+/*******************************************************************************/
+/*                          nim_choix_ia_aleatoire                             */
+/*******************************************************************************/
+
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces) {
     unsigned int seed = md_srand_interne();
     *choix_colonne = rand() % nb_colonnes;
     *choix_nb_pieces = plateau[*choix_colonne] - (rand() % plateau[*choix_colonne]);
+}
+
+/*******************************************************************************/
+/*                                  nim_choix_ia                               */
+/*******************************************************************************/
+
+void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int * choix_colonne, int * choix_nb_pieces) {
+    //À faire
 }

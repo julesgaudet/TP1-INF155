@@ -23,6 +23,7 @@ int lire_entier(int min, int max);
 /*                   D�CLARATION DE MAIN                                       */
 /*******************************************************************************/
 
+//TEST PARTIE 1
 int main (void) {
     printf("\n");
     printf("******************Premier test********************\n");
@@ -42,6 +43,19 @@ int main (void) {
     printf("\n");
     printf("*****************Sixième test*********************\n");
     test_nim_choix_ia_aleatoire(); //TEST 6
+
+//TEST PARTIE 2
+    printf("\n");
+    printf("*****************Treizième test*********************\n");
+    test_inverser_tab_bits();  //TEST 13
+    printf("\n");
+    printf("*****************Quatorzième test*********************\n");
+    test_codage_dec2bin();  //TEST 14
+    printf("\n");
+    printf("*******************Quinzième test*********************\n");
+    test_afficher_tab_bits();  //TEST 15
+    printf("\n");
+    
 
     //Fonctions pour que le programme fonctionne
     //lire_entier(MINIMUM_BORNE, MAXIMUM_BORNE);

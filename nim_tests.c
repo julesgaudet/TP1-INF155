@@ -12,15 +12,21 @@
 #include "nim_tests.h"
 #include "nim.h"
 #include <stdio.h>
+#include "codage_numerique.h"
 
 /*******************************************************************************/
-/*                    D�CLARATION DES TESTS                                    */
+/*                               PARTIE 1                                      */
+/*                         test_lire_entier                                    */
 /*******************************************************************************/
 
 void test_lire_entier() {
     int val = lire_entier(1, 20);
     printf("Voici la valeur entre 1 et 20 : %d\n", val);
 }
+
+/*******************************************************************************/
+/*                         test_plateau_init                                   */
+/*******************************************************************************/
 
 void test_plateau_init() {
     int plateau[20];
@@ -31,6 +37,10 @@ void test_plateau_init() {
     printf("\n");
 }
 
+/*******************************************************************************/
+/*                       test_nim_jouer_tour                                   */
+/*******************************************************************************/
+
 void test_nim_jouer_tour() {
     int plateau[20];
     plateau[19] = 30;
@@ -38,6 +48,10 @@ void test_nim_jouer_tour() {
     nim_jouer_tour(plateau, 20, 19, 6);
     printf("Nombre de jetons après : %d\n", plateau[19]);
 }
+
+/*******************************************************************************/
+/*                    test_plateau_supprimer_colonne                           */
+/*******************************************************************************/
 
 void test_plateau_supprimer_colonne() {
     int plateau[20];
@@ -55,11 +69,19 @@ void test_plateau_supprimer_colonne() {
     printf("\n");
 }
 
+/*******************************************************************************/
+/*                    test_plateau_defragmenter                                */
+/*******************************************************************************/
+
 void test_plateau_defragmenter() {
     int plateau[5] = {1,0,0,0,5};
     int x = plateau_defragmenter(plateau, 5);
     printf("Le nombre de zéro enlevé : %d\n", x);
 }
+
+/*******************************************************************************/
+/*                    test_nim_choix_ia_aleatoire                              */
+/*******************************************************************************/
 
 void test_nim_choix_ia_aleatoire() {
     const int plateau[5] = {1,5,5,5,5};
@@ -68,4 +90,47 @@ void test_nim_choix_ia_aleatoire() {
     nim_choix_ia_aleatoire(plateau, nb_colonnes, &choix_colonne, &choix_nb_pieces);
     printf("Voici le choix de colonne : %d\n", choix_colonne);
     printf("Voici le nouveau nombre de pièces : %d\n", choix_nb_pieces);
+}
+
+/*******************************************************************************/
+/*                               PARTIE 2                                      */
+/*                        test_inverser_tab_bits                               */
+/*******************************************************************************/
+
+void test_inverser_tab_bits() {
+    int tab[8] = {1, 1, 1, 1, 1, 0, 0, 0};
+    printf("Matrice avant : 1 1 1 1 1 0 0 0\n");
+    int nb_bits = inverser_tab_bits(tab, 8);
+    printf("Résultat pour inversement matrice : %d\n", nb_bits);
+    printf("Matrice après : ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", tab[i]);
+    }
+    printf("\n");
+}
+
+/*******************************************************************************/
+/*                            test_codage_dec2bin                              */
+/*******************************************************************************/
+
+void test_codage_dec2bin() {
+    int nombre = 255;
+    int resultat[8];  
+    int nb_bits = codage_dec2bin(nombre, resultat);
+    printf("Nombre décimal : %d\n", nombre);
+    printf("Le nombre de chiffre : %d bits\n", nb_bits);
+    printf("Nombre binaire : ");
+    for (int i = 0; i < nb_bits; i++) {  
+        printf("%d ", resultat[i]);
+    }
+    printf("\n");
+}
+
+/*******************************************************************************/
+/*                          test_afficher_tab_bits                             */
+/*******************************************************************************/
+
+void test_afficher_tab_bits() {
+    int resultat[8] = {1,1,1,1,1,0,0,0};
+    afficher_tab_bits(resultat, CODAGE_NB_BITS);
 }
