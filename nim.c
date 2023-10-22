@@ -87,7 +87,6 @@ void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_co
 void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int *choix_colonne, int *choix_nb_pieces) {
     int matrice[nb_colonnes][CODAGE_NB_BITS];
     int sommes[CODAGE_NB_BITS];
-    int compteur = 0;
 
     if (niveau == 0) {
         nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
@@ -95,57 +94,30 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int *choix_c
     else if (niveau == 1) {
         unsigned int seed = md_srand_interne();
         int valeur = rand() % 2;
-        if (valeur == 1) {
-            nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
-        } 
-        else {
+        if (valeur == 0) {
+            niveau = 2; 
+        }
+        if (niveau == 2) {
             construire_mat_binaire(plateau, nb_colonnes, matrice);
             sommes_mat_binaire(matrice, nb_colonnes, sommes);
+
             int positionValeurImpaire = position_premier_impaire(sommes);
-            
             if (positionValeurImpaire == -1) {
                 nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
             } 
             else {
-                // Réinitialise le compteur pour le meilleur coup
-                compteur = 0;
                 for (int j = 0; j < CODAGE_NB_BITS; j++) {
                     if (matrice[*choix_colonne][j] == 1) {
                         matrice[*choix_colonne][j] = 0;
+                        // Il manque d'inverser tous les chiffres
                         int valeurDecimale = codage_bin2dec(matrice[*choix_colonne]);
                         sommes[*choix_colonne] = sommes[*choix_colonne] - valeurDecimale;
-                        compteur++;
                     }
                 }
-                *choix_nb_pieces = compteur;
             }
-        }
-    } 
-    else if (niveau == 2) {
-        construire_mat_binaire(plateau, nb_colonnes, matrice);
-        sommes_mat_binaire(matrice, nb_colonnes, sommes);
-        int positionValeurImpaire = position_premier_impaire(sommes);
-
-        if (positionValeurImpaire == -1) {
-            nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
-        } 
-        else {
-            // Réinitialise le compteur pour le meilleur coup 
-            //Je pense que cest ici l'erreur
-            compteur = 0;
-            for (int j = 0; j < CODAGE_NB_BITS; j++) {
-                if (matrice[*choix_colonne][j] == 1) {
-                    matrice[*choix_colonne][j] = 0;
-                    int valeurDecimale = codage_bin2dec(matrice[*choix_colonne]);
-                    sommes[*choix_colonne] = sommes[*choix_colonne] - valeurDecimale;
-                    compteur++;
-                }
-            }
-            *choix_nb_pieces = compteur;
         }
     }
 }
-
 
 /*******************************************************************************/
 /*                         construire_mat_binaire                              */
@@ -162,6 +134,9 @@ void construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][
 /*******************************************************************************/
 
 void sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, int sommes[]) {
+    for (int j = 0; j < CODAGE_NB_BITS; j++) {
+        sommes[j] = 0; 
+    }
     for (int i = 0; i < nb_lignes; i++) {
         for (int j = 0; j < CODAGE_NB_BITS; j++) {
             sommes[j] = sommes[j] + matrice[i][j];
