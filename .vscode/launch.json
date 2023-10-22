@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Lancer",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/Users/julesgaudet/Documents/Devoir INF155/Travail-pratique-1/a.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/julesgaudet/Documents/Devoir INF155/Travail-pratique-1",
+      "program": "/Users/julesgaudet/Documents/Devoir INF155/Travail-pratique-1/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
+}
