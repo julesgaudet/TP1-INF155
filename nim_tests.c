@@ -107,14 +107,6 @@ void test_nim_choix_ia() {
         printf("%d ", plateau[i]);
     }
     printf("\n");
-    printf("Niveau 0 :\n");
-    nim_choix_ia(plateau, 8, 0, &choix_colonne, &choix_nb_pieces);
-    printf("Choix de colonne : %d\n", choix_colonne);
-    printf("Nombre de pièces à retirer : %d\n", choix_nb_pieces);
-    printf("Niveau 1 :\n");
-    nim_choix_ia(plateau, 8, 1, &choix_colonne, &choix_nb_pieces);
-    printf("Choix de colonne : %d\n", choix_colonne);
-    printf("Nombre de pièces à retirer : %d\n", choix_nb_pieces);
     printf("Niveau 2 :\n");
     nim_choix_ia(plateau, 8, 2, &choix_colonne, &choix_nb_pieces);
     printf("Choix de colonne : %d\n", choix_colonne);

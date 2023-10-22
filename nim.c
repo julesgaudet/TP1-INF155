@@ -96,28 +96,32 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int *choix_c
         int valeur = rand() % 2;
         if (valeur == 0) {
             niveau = 2; 
+        } else if (valeur == 1) {
+            nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
         }
         if (niveau == 2) {
             construire_mat_binaire(plateau, nb_colonnes, matrice);
             sommes_mat_binaire(matrice, nb_colonnes, sommes);
-
             int positionValeurImpaire = position_premier_impaire(sommes);
             if (positionValeurImpaire == -1) {
                 nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
             } 
             else {
-                for (int j = 0; j < CODAGE_NB_BITS; j++) {
+                for (int j = positionValeurImpaire; j < CODAGE_NB_BITS; j++) {
                     if (matrice[*choix_colonne][j] == 1) {
                         matrice[*choix_colonne][j] = 0;
-                        // Il manque d'inverser tous les chiffres
-                        int valeurDecimale = codage_bin2dec(matrice[*choix_colonne]);
-                        sommes[*choix_colonne] = sommes[*choix_colonne] - valeurDecimale;
                     }
+                    else {
+                        matrice[*choix_colonne][j] = 1;
+                    }
+                    int valeurDecimale = codage_bin2dec(matrice[*choix_colonne]);
+                    sommes[*choix_colonne] = sommes[*choix_colonne] - valeurDecimale;
                 }
             }
         }
     }
 }
+
 
 /*******************************************************************************/
 /*                         construire_mat_binaire                              */
