@@ -46,6 +46,10 @@ int main (void) {
     printf("\n");
     printf("*****************Septième test*********************\n");
     test_nim_choix_ia();
+    printf("\n");
+    printf("*****************Septième test*********************\n");
+    test_plateau_afficher();
+    printf("\n");
 
 //TEST PARTIE 2
     printf("\n");

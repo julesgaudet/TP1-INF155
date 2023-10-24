@@ -11,6 +11,7 @@
 #include "nim_io.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include "WinConsole.H"
 
 /*******************************************************************************/
 /*                                  LIRE ENTIER                                */
@@ -33,8 +34,21 @@ int lire_entier(int min, int max) {
 /*******************************************************************************/
 
 void plateau_afficher(const int plateau[], int nb_colonnes, int col_select) {
-    //À faire
+    for (int i = 0; i < nb_colonnes; i++) {
+        for (int j = 1; j < 36; j++) {
+            if (i == 0) {
+                gotoxy(i,j);
+                printf("%d", i);
+            }
+            else if (plateau[nb_colonnes] <= j) {
+                gotoxy(i,j);
+                printf("*");
+            }
+        }      
+    }  
 }
+
+/*void gotoxy(int ,int );		    //positions text cursor at (x, y) screen position*/
 
 /*******************************************************************************/
 /*                                   choisir_colonne                           */

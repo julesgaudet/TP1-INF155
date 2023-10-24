@@ -22,7 +22,8 @@ void test_nim_jouer_tour(); //TEST 3 : S'assurer qu'on peut soustraire le nombre
 void test_plateau_supprimer_colonne(); //TEST 4 : S'assurer qu'on supprime la colonne "col_a_supprimer" du plateau.
 void test_plateau_defragmenter(); //TEST 5 : S'assurer qu'on supprime les colonnes vides du tableau en utilisant la fonction "plateau_supprimer_colonne".  
 void test_nim_choix_ia_aleatoire(); //TEST 6 : S'assurer qu'il effectue un jeu aléatoire en choisissant au hasard une colonne, puis au hasard le nombre de pièces à jouer de cette colonne. 
-void test_nim_choix_ia(); //TEST 7 : Le ia fais un choix entre le niveau 0 et 2 (difficulté différente);
+void test_nim_choix_ia(); //TEST 7 : Le ia fais un choix entre le niveau 0 et 2 (difficulté différente).
+void test_plateau_afficher(); //TEST 8 : S'assurer que l'affichage du tableau est correct (nb de colonnes/nb de rangés).
 
 //Partie 2
 void test_inverser_tab_bits(); //TEST 13 : S'assurer qu'il fait un inversement avec le nombre de bits.

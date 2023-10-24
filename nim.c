@@ -99,6 +99,8 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, int niveau, int *choix_c
         } else if (valeur == 1) {
             nim_choix_ia_aleatoire(plateau, nb_colonnes, choix_colonne, choix_nb_pieces);
         }
+
+        //Il y a une erreur dans le niveau 2; ca ne marche pas
         if (niveau == 2) {
             construire_mat_binaire(plateau, nb_colonnes, matrice);
             sommes_mat_binaire(matrice, nb_colonnes, sommes);
